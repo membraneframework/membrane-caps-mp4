@@ -1,21 +1,21 @@
-# Membrane Multimedia Framework: ################# Element
+# MPEG-4 container Membrane format
 
-[![Hex.pm](https://img.shields.io/hexpm/v/membrane_element_.svg)](https://hex.pm/packages/membrane_element_)
-[![API Docs](https://img.shields.io/badge/api-docs-yellow.svg?style=flat)](https://hexdocs.pm/membrane_element_/)
-[![CircleCI](https://circleci.com/gh/membraneframework/membrane-element-.svg?style=svg)](https://circleci.com/gh/membraneframework/membrane-element-)
+[![Hex.pm](https://img.shields.io/hexpm/v/membrane_mp4_format.svg)](https://hex.pm/packages/membrane_mp4_format)
+[![API Docs](https://img.shields.io/badge/api-docs-yellow.svg?style=flat)](https://hexdocs.pm/membrane_mp4_format/)
+[![CircleCI](https://circleci.com/gh/membraneframework/membrane_mp4_format.svg?style=svg)](https://circleci.com/gh/membraneframework/membrane_mp4_format)
 
 ## Installation
 
 Add the following line to your `deps` in `mix.exs`. Run `mix deps.get`.
 
 ```elixir
-{:membrane_element_, "~> 0.1.0"}
+{:membrane_mp4_format, "~> 0.1.0"}
 ```
 
 ## Copyright and License
 
-Copyright 2019, [Software Mansion](https://swmansion.com/?utm_source=git&utm_medium=readme&utm_campaign=membrane-element-)
+Copyright 2019, [Software Mansion](https://swmansion.com/?utm_source=git&utm_medium=readme&utm_campaign=membrane_mp4_format)
 
-[![Software Mansion](https://membraneframework.github.io/static/logo/swm_logo_readme.png)](https://swmansion.com/?utm_source=git&utm_medium=readme&utm_campaign=membrane-element-)
+[![Software Mansion](https://membraneframework.github.io/static/logo/swm_logo_readme.png)](https://swmansion.com/?utm_source=git&utm_medium=readme&utm_campaign=membrane_mp4_format)
 
 Licensed under the [Apache License, Version 2.0](LICENSE)

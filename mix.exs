@@ -10,7 +10,7 @@ defmodule Membrane.MP4.Format.MixProject do
       version: @version,
       elixir: "~> 1.7",
       elixirc_paths: elixirc_paths(Mix.env()),
-      description: "MPEG-4 Container Membrane format",
+      description: "MPEG-4 container Membrane format",
       package: package(),
       name: "Membrane MP4 format",
       source_url: @github_url,
@@ -50,9 +50,9 @@ defmodule Membrane.MP4.Format.MixProject do
 
   defp deps do
     [
-      {:membrane_core, "~> 0.5.0"},
+      {:membrane_core, "~> 0.5.2"},
       {:ex_doc, "~> 0.21", only: [:dev, :test], runtime: false},
-      {:dialyxir, "~> 1.0.0-rc.7", only: [:dev, :test], runtime: false}
+      {:dialyxir, "~> 1.0.0", only: [:dev, :test], runtime: false}
     ]
   end
 end
