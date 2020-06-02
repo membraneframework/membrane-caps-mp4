@@ -10,18 +10,17 @@ defmodule Membrane.MP4.Payload do
 
   Contains the following fields:
   - content - a struct with content-specific information
-  - sample_duration - duration of each payloaded packet in `timescale` units
-  - timescale - expressed in ticks per second
+  - timescale - used to express sample durations within MP4. Each sample duration
+    should be a multiply of the timescale for good timing accuracy. Expressed in ticks per second.
   - height - frame height in pixels, should be set to 0 for non-visual streams
   - width - frame width in pixels, should be set to 0 for non-visual streams
   """
   @type t :: %__MODULE__{
           content: struct,
-          sample_duration: pos_integer,
           timescale: pos_integer,
           height: non_neg_integer,
           width: non_neg_integer
         }
-  @enforce_keys [:content, :sample_duration, :timescale]
-  defstruct @enforce_keys ++ [height: 0, width: 0, inter_frames?: false]
+  @enforce_keys [:content, :timescale]
+  defstruct @enforce_keys ++ [height: 0, width: 0]
 end
