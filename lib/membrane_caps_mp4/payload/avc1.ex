@@ -4,8 +4,9 @@ defmodule Membrane.MP4.Payload.AVC1 do
   """
 
   @type t :: %__MODULE__{
-          avcc: binary
+          avcc: binary,
+          inband_parameters?: boolean()
         }
-  @enforce_keys [:avcc]
+  @enforce_keys [:avcc, :inband_parameters?]
   defstruct @enforce_keys
 end
