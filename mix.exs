@@ -1,7 +1,7 @@
 defmodule Membrane.MP4.Format.MixProject do
   use Mix.Project
 
-  @version "0.5.0"
+  @version "0.6.0"
   @github_url "https://github.com/membraneframework/membrane_mp4_format"
 
   def project do
@@ -31,7 +31,7 @@ defmodule Membrane.MP4.Format.MixProject do
   defp docs do
     [
       main: "readme",
-      extras: ["README.md"],
+      extras: ["README.md", "LICENSE"],
       source_ref: "v#{@version}",
       nest_modules_by_prefix: [Membrane.MP4]
     ]
@@ -40,7 +40,7 @@ defmodule Membrane.MP4.Format.MixProject do
   defp package do
     [
       maintainers: ["Membrane Team"],
-      licenses: ["Apache 2.0"],
+      licenses: ["Apache-2.0"],
       links: %{
         "GitHub" => @github_url,
         "Membrane Framework Homepage" => "https://membraneframework.org"
@@ -50,7 +50,6 @@ defmodule Membrane.MP4.Format.MixProject do
 
   defp deps do
     [
-      {:membrane_core, "~> 0.8.0"},
       {:ex_doc, "~> 0.21", only: [:dev, :test], runtime: false},
       {:dialyxir, "~> 1.0.0", only: [:dev, :test], runtime: false}
     ]
