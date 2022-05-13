@@ -8,14 +8,21 @@ defmodule Membrane.MP4.Format.MixProject do
     [
       app: :membrane_mp4_format,
       version: @version,
-      elixir: "~> 1.7",
+      elixir: "~> 1.12",
       elixirc_paths: elixirc_paths(Mix.env()),
+      start_permanent: Mix.env() == :prod,
+      deps: deps(),
+      dialyzer: dialyzer(),
+
+      # hex
       description: "MPEG-4 container Membrane format",
       package: package(),
+
+      # docs
       name: "Membrane MP4 format",
       source_url: @github_url,
-      docs: docs(),
-      deps: deps()
+      homepage_url: "https://membraneframework.org",
+      docs: docs()
     ]
   end
 
@@ -28,13 +35,25 @@ defmodule Membrane.MP4.Format.MixProject do
   defp elixirc_paths(:test), do: ["lib", "test/support"]
   defp elixirc_paths(_), do: ["lib"]
 
-  defp docs do
+  defp deps do
     [
-      main: "readme",
-      extras: ["README.md", "LICENSE"],
-      source_ref: "v#{@version}",
-      nest_modules_by_prefix: [Membrane.MP4]
+      {:ex_doc, ">= 0.0.0", only: :dev, runtime: false},
+      {:dialyxir, ">= 0.0.0", only: :dev, runtime: false},
+      {:credo, ">= 0.0.0", only: :dev, runtime: false}
     ]
+  end
+
+  defp dialyzer() do
+    opts = [
+      flags: [:error_handling]
+    ]
+
+    if System.get_env("CI") == "true" do
+      # Store PLTs in cacheable directory for CI
+      [plt_local_path: "priv/plts", plt_core_path: "priv/plts"] ++ opts
+    else
+      opts
+    end
   end
 
   defp package do
@@ -48,10 +67,13 @@ defmodule Membrane.MP4.Format.MixProject do
     ]
   end
 
-  defp deps do
+  defp docs do
     [
-      {:ex_doc, "~> 0.21", only: [:dev, :test], runtime: false},
-      {:dialyxir, "~> 1.0.0", only: [:dev, :test], runtime: false}
+      main: "readme",
+      extras: ["README.md", "LICENSE"],
+      formatters: ["html"],
+      source_ref: "v#{@version}",
+      nest_modules_by_prefix: [Membrane.MP4]
     ]
   end
 end
