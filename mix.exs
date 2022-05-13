@@ -1,7 +1,7 @@
 defmodule Membrane.MP4.Format.MixProject do
   use Mix.Project
 
-  @version "0.6.0"
+  @version "0.7.0"
   @github_url "https://github.com/membraneframework/membrane_mp4_format"
 
   def project do
